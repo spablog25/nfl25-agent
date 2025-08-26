@@ -1,0 +1,33 @@
+﻿team,W1,W2,W3,W4,W5,W6,W7,W8,W9,W10,W11,W12,W13,W14,W15,W16,TG,CH,Like_W1,Like_W2,Like_W3,Like_W4,Like_W5,Like_W6,Like_W7,Like_W8,Like_W9,Like_W10,Like_W11,Like_W12,Like_W13,Like_W14,Like_W15,Like_W16,Like_TG,Like_CH
+ARI,NO (A),CAR (H),SF (A),SEA (H),TEN (H),IND (A),GB (H),-,DAL (A),SEA (A),SF (H),JAX (H),TB (A),LAR (H),HOU (A),ATL (H),JAX (H),ATL (H),Y,N,N,N,Y,N,N,N,N,N,N,N,N,N,N,N,N,N
+ATL,TB (H),MIN (A),CAR (A),WSH (H),-,BUF (H),SF (A),MIA (H),NE (A),IND (A),CAR (H),NO (A),NYJ (A),SEA (H),TB (A),ARI (A),NO (A),ARI (A),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+BAL,BUF (A),CLE (H),DET (H),KC (A),HOU (H),LAR (H),-,CHI (H),MIA (A),MIN (A),CLE (A),NYJ (H),CIN (H),PIT (H),CIN (A),NE (H),NYJ (H),NE (H),N,Y,N,N,Y,N,N,Y,N,N,N,Y,N,Y,N,Y,N,N
+BUF,BAL (H),NYJ (A),MIA (H),NO (H),NE (H),ATL (A),-,CAR (A),KC (H),MIA (A),TB (H),HOU (A),PIT (A),CIN (H),NE (A),CLE (A),HOU (A),CLE (A),N,Y,Y,Y,Y,N,N,Y,N,N,N,N,N,N,N,N,N,N
+CAR,JAX (A),ARI (A),ATL (H),NE (A),MIA (H),DAL (H),NYJ (A),BUF (H),GB (A),NO (H),ATL (A),SF (A),LAR (H),-,NO (A),TB (H),SF (A),TB (H),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+CHI,MIN (H),DET (A),DAL (H),LV (A),-,WSH (A),NO (H),BAL (A),CIN (A),NYG (H),MIN (A),PIT (H),PHI (A),GB (A),CLE (H),GB (H),PIT (H),GB (H),N,N,N,N,N,N,Y,N,N,N,N,N,N,N,N,N,N,N
+CIN,CLE (A),JAX (H),MIN (A),DEN (A),DET (H),GB (A),PIT (H),NYJ (H),CHI (H),-,PIT (A),NE (H),BAL (A),BUF (A),BAL (H),MIA (A),NE (H),MIA (A),N,Y,N,N,N,N,N,Y,N,N,N,Y,N,N,N,N,N,N
+CLE,CIN (H),BAL (A),GB (H),DET (A),MIN (H),PIT (A),MIA (H),NE (A),-,NYJ (A),BAL (H),LV (A),SF (H),TEN (H),CHI (A),BUF (H),LV (A),BUF (H),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+DAL,PHI (A),NYG (H),CHI (A),GB (H),NYJ (A),CAR (A),WSH (H),DEN (A),ARI (H),-,LV (A),PHI (H),KC (H),DET (A),MIN (H),LAC (H),PHI (H),LAC (H),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+DEN,TEN (H),IND (A),LAC (A),CIN (H),PHI (A),NYJ (A),NYG (H),DAL (H),HOU (A),LV (H),KC (H),-,WSH (A),LV (A),GB (H),JAX (H),-,JAX (H),Y,N,N,N,N,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
+DET,GB (A),CHI (H),BAL (A),CLE (H),CIN (A),KC (A),TB (H),-,MIN (H),WSH (A),PHI (A),NYG (H),GB (H),DAL (H),LAR (A),PIT (H),NYG (H),PIT (H),N,N,N,Y,N,N,N,N,N,N,N,N,N,N,N,Y,Y,Y
+GB,DET (H),WSH (H),CLE (A),DAL (A),-,CIN (H),ARI (A),PIT (A),CAR (H),PHI (H),NYG (A),MIN (H),DET (A),CHI (H),DEN (A),CHI (A),MIN (H),CHI (A),N,N,Y,N,N,N,N,N,Y,N,N,N,N,N,N,N,N,N
+HOU,LAR (A),TB (H),JAX (A),TEN (H),BAL (A),-,SEA (A),SF (H),DEN (H),JAX (H),TEN (A),BUF (H),IND (A),KC (A),ARI (H),LV (H),BUF (H),LV (H),N,N,N,Y,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+IND,MIA (H),DEN (H),TEN (A),LAR (A),LV (H),ARI (H),LAC (A),TEN (H),PIT (A),ATL (H),-,KC (A),HOU (H),JAX (A),SEA (A),SF (H),KC (A),SF (H),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+JAX,CAR (H),CIN (A),HOU (H),SF (A),KC (H),SEA (H),LAR (H),-,LV (A),HOU (A),LAC (H),ARI (A),TEN (A),IND (H),NYJ (H),DEN (A),ARI (A),DEN (A),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+KC,LAC (A),PHI (H),NYG (A),BAL (H),JAX (A),DET (H),LV (H),WSH (H),BUF (A),-,DEN (A),IND (H),DAL (A),HOU (H),LAC (H),TEN (A),IND (H),TEN (A),N,N,Y,N,N,N,N,N,N,N,N,Y,N,N,N,Y,Y,N
+LAC,KC (H),LV (A),DEN (H),NYG (A),WSH (H),MIA (A),IND (H),MIN (H),TEN (A),PIT (H),JAX (A),-,LV (H),PHI (H),KC (A),DAL (A),-,DAL (A),N,N,N,N,N,N,Y,N,Y,Y,Y,N,Y,N,N,N,N,N
+LAR,HOU (H),TEN (A),PHI (A),IND (H),SF (H),BAL (A),JAX (A),-,NO (H),SF (A),SEA (H),TB (H),CAR (A),ARI (A),DET (H),SEA (A),TB (H),SEA (A),N,Y,N,N,N,N,N,N,Y,N,N,N,N,N,N,N,N,N
+LV,NE (A),LAC (H),WSH (A),CHI (H),IND (A),TEN (H),KC (A),-,JAX (H),DEN (A),DAL (H),CLE (H),LAC (A),DEN (H),PHI (A),HOU (A),CLE (H),HOU (A),N,N,N,N,N,Y,N,N,N,N,N,N,N,N,N,N,N,N
+MIA,IND (A),NE (H),BUF (A),NYJ (H),CAR (A),LAC (H),CLE (A),ATL (A),BAL (H),BUF (H),WSH (H),-,NO (H),NYJ (A),PIT (A),CIN (H),-,CIN (H),N,N,N,N,N,N,N,N,N,N,N,N,Y,N,N,N,N,N
+MIN,CHI (A),ATL (H),CIN (H),PIT (A),CLE (A),-,PHI (H),LAC (A),DET (A),BAL (H),CHI (H),GB (A),SEA (A),WSH (H),DAL (A),NYG (A),GB (A),NYG (A),N,N,N,N,Y,N,N,N,N,N,N,N,N,N,N,N,N,N
+NE,LV (H),MIA (A),PIT (H),CAR (H),BUF (A),NO (A),TEN (A),CLE (H),ATL (H),TB (A),NYJ (H),CIN (A),NYG (H),-,BUF (H),BAL (A),CIN (A),BAL (A),N,N,N,N,N,Y,N,N,N,N,Y,N,N,N,N,N,N,N
+NO,ARI (H),SF (H),SEA (A),BUF (A),NYG (H),NE (H),CHI (A),TB (H),LAR (A),CAR (A),-,ATL (H),MIA (A),TB (A),CAR (H),NYJ (H),ATL (H),NYJ (H),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+NYG,WSH (A),DAL (A),KC (H),LAC (H),NO (A),PHI (H),DEN (A),PHI (A),SF (H),CHI (A),GB (H),DET (A),NE (A),-,WSH (H),MIN (H),DET (A),MIN (H),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+NYJ,PIT (H),BUF (H),TB (A),MIA (A),DAL (H),DEN (H),CAR (H),CIN (A),-,CLE (H),NE (A),BAL (A),ATL (H),MIA (H),JAX (A),NO (A),BAL (A),NO (A),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+PHI,DAL (H),KC (A),LAR (H),TB (A),DEN (H),NYG (A),MIN (A),NYG (H),-,GB (A),DET (H),DAL (A),CHI (H),LAC (A),LV (H),WSH (A),DAL (A),WSH (A),Y,N,N,N,N,Y,N,N,N,N,N,N,N,N,Y,N,Y,N
+PIT,NYJ (A),SEA (H),NE (A),MIN (H),-,CLE (H),CIN (A),GB (H),IND (H),LAC (A),CIN (H),CHI (A),BUF (H),BAL (A),MIA (H),DET (A),CHI (A),DET (A),N,N,N,N,N,Y,N,N,N,N,N,N,N,N,N,N,N,N
+SEA,SF (H),PIT (A),NO (H),ARI (A),TB (H),JAX (A),HOU (H),-,WSH (A),ARI (H),LAR (A),TEN (A),MIN (H),ATL (A),IND (H),LAR (H),TEN (A),LAR (H),N,N,Y,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+SF,SEA (A),NO (A),ARI (H),JAX (H),LAR (A),TB (A),ATL (H),HOU (A),NYG (A),LAR (H),ARI (A),CAR (H),CLE (A),-,TEN (H),IND (A),CAR (H),IND (A),N,Y,N,Y,N,N,Y,N,N,N,N,Y,Y,N,Y,N,N,N
+TB,ATL (A),HOU (A),NYJ (H),PHI (H),SEA (A),SF (H),DET (A),NO (A),-,NE (H),BUF (A),LAR (A),ARI (H),NO (H),ATL (H),CAR (A),LAR (A),CAR (A),N,N,Y,N,N,N,N,Y,N,Y,N,N,N,Y,Y,N,N,N
+TEN,DEN (A),LAR (H),IND (H),HOU (A),ARI (A),LV (A),NE (H),IND (A),LAC (H),-,HOU (H),SEA (H),JAX (H),CLE (A),SF (A),KC (H),SEA (H),KC (H),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N
+WSH,NYG (H),GB (A),LV (H),ATL (A),LAC (A),CHI (H),DAL (A),KC (A),SEA (H),DET (H),MIA (A),-,DEN (H),MIN (A),NYG (A),PHI (H),-,PHI (H),N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,Y

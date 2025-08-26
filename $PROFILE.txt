@@ -1,0 +1,1 @@
+function cdroot { Set-Location "C:\Users\Spencer\OneDrive\Desktop\nfl25-agent" }

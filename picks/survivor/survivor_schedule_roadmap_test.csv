@@ -1,0 +1,16 @@
+week,team,opponent,home_or_away,projected_win_prob,homefield_advantage,rating_gap,rest_days,injury_adjustment,future_scarcity_bonus,power_rating_differential,spot_value_score,spot_value
+1,KC,CIN,Home,0.78,0.1,0.15,0.05,0.05,0.05,0.2,1.28,High
+1,BUF,BAL,Home,0.75,0.1,0.1,0.05,0.05,0.05,0.18,1.13,High
+1,NE,NYJ,Home,0.7,0.1,0.05,0.05,0.05,0.05,0.12,1,Medium
+1,LAR,SEA,Away,0.68,0,0.12,0.05,0.05,0.05,0.14,0.94,Medium
+1,PHI,ATL,Home,0.72,0.1,0.13,0.05,0.05,0.05,0.19,1.09,High
+2,KC,LV,Away,0.8,0,0.14,0.05,0.05,0.05,0.22,1.14,High
+2,BUF,MIA,Home,0.76,0.1,0.11,0.05,0.05,0.05,0.15,1.08,High
+2,NYG,NO,Home,0.65,0.1,0.08,0.05,0.05,0.05,0.1,0.93,Medium
+2,GB,MIN,Away,0.7,0,0.09,0.05,0.05,0.05,0.16,0.98,Medium
+2,DEN,JAC,Home,0.68,0.1,0.1,0.05,0.05,0.05,0.17,1,Medium
+3,PHI,DAL,Away,0.74,0,0.12,0.05,0.05,0.05,0.21,1.06,High
+3,LAR,ARI,Home,0.78,0.1,0.15,0.05,0.05,0.05,0.23,1.18,High
+3,TB,ATL,Home,0.72,0.1,0.1,0.05,0.05,0.05,0.18,1.05,High
+3,IND,CHI,Away,0.66,0,0.07,0.05,0.05,0.05,0.11,0.94,Medium
+3,NYG,WSH,Home,0.7,0.1,0.09,0.05,0.05,0.05,0.14,0.98,Medium

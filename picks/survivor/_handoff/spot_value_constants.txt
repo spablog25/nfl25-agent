@@ -1,0 +1,16 @@
+# From: C:\Users\Spencer\OneDrive\Desktop\nfl25-agent\scripts\spot_value_updates.py
+
+DVOA_WIDTH = 15.0
+HI_THRESH = 0.7
+INJURY_CAP = 0.05
+MAX_DVOA_ADJ = 0.06
+MAX_SCARCITY_CONTRIB = 0.12
+MED_THRESH = 0.55
+RATING_WIDTH = 6.0
+W_HOLIDAY = 0.03
+W_HOME = 0.1
+W_INJURY = 1.0
+W_RATING = 0.1
+W_REST = 0.1
+W_SCARCITY_TOTAL = 0.1
+W_WIN = 0.8

@@ -1,0 +1,11 @@
+week,date,team,opponent,home_or_away,time,rest_days,reserved,is_locked_out,expected_avail,spot_value,projected_win_prob,notes_future,spot_quality,preferred,must_use,save_for_later,notes,spot_value_score
+1,2025-09-07,ARI,NO,Away,1:00 PM,7,False,False,False,Low,0.339,,,False,False,False,,0.2712
+1,2025-09-07,ATL,TB,Home,1:00 PM,7,False,False,False,Medium,0.7041,,,False,False,False,,0.6133
+1,2025-09-07,BAL,BUF,Away,8:20 PM,7,False,False,False,Low,0.537,,,False,False,False,,0.4296
+1,2025-09-07,BUF,BAL,Home,8:20 PM,7,False,False,False,Low,0.505,,,False,False,False,,0.454
+1,2025-09-07,CAR,JAX,Away,1:00 PM,7,False,False,False,Low,0.6078,,,False,False,False,,0.4862
+1,2025-09-08,CHI,MIN,Home,8:15 PM,7,False,False,False,Medium,0.5868,,,False,False,False,,0.5194
+1,2025-09-07,CIN,CLE,Away,1:00 PM,7,False,False,False,Medium,0.8039,,,False,False,False,,0.6431
+1,2025-09-07,CLE,CIN,Home,1:00 PM,7,False,False,False,Low,0.2381,,,False,False,False,,0.2405
+1,2025-09-04,DAL,PHI,Away,8:20 PM,7,False,False,False,Low,0.3571,,,False,False,False,,0.2857
+1,2025-09-07,DEN,TEN,Home,4:05 PM,7,False,False,False,Medium,0.7959,,,False,False,False,,0.6867

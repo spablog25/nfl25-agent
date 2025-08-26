@@ -1,0 +1,7 @@
+week,team,used,eliminated,win_prob,opponent,home/away,moneyline,is_thanksgiving,is_christmas,future_value,notes
+1,KC,yes,No,0.78,CIN,Home,-300.0,0,0,High,CIN banged up
+2,BUF,yes,No,0.75,MIA,Home,-250.0,0,0,Medium,BUF missing QB
+3,NE,yes,No,0.7,NYJ,Home,-180.0,0,0,High,NYJ injured OL
+5,ARI,yes,No,,TEN,Home,,0,0,Medium,
+6,SF,yes,No,,TB,Away,,0,0,Low,nan | NA
+4,MIN,yes,No,,PIT,Away,,0,0,,nan | test

@@ -1,0 +1,340 @@
+[
+  {
+    "id": "f1bc532dff946d15cb85654b5c4b246e",
+    "sport_key": "americanfootball_nfl",
+    "sport_title": "NFL",
+    "commence_time": "2025-09-05T00:20:00Z",
+    "home_team": "Philadelphia Eagles",
+    "away_team": "Dallas Cowboys",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2025-08-19T07:07:34Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Dallas Cowboys",
+                "price": 260
+              },
+              {
+                "name": "Philadelphia Eagles",
+                "price": -325
+              }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Dallas Cowboys",
+                "price": -115,
+                "point": 7.0
+              },
+              {
+                "name": "Philadelphia Eagles",
+                "price": -105,
+                "point": -7.0
+              }
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Over",
+                "price": -105,
+                "point": 46.5
+              },
+              {
+                "name": "Under",
+                "price": -115,
+                "point": 46.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2025-08-19T07:07:34Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Dallas Cowboys",
+                "price": 260
+              },
+              {
+                "name": "Philadelphia Eagles",
+                "price": -325
+              }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Dallas Cowboys",
+                "price": -110,
+                "point": 7.0
+              },
+              {
+                "name": "Philadelphia Eagles",
+                "price": -110,
+                "point": -7.0
+              }
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Over",
+                "price": -110,
+                "point": 46.5
+              },
+              {
+                "name": "Under",
+                "price": -110,
+                "point": 46.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2025-08-19T07:06:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2025-08-19T07:06:24Z",
+            "outcomes": [
+              {
+                "name": "Dallas Cowboys",
+                "price": 260
+              },
+              {
+                "name": "Philadelphia Eagles",
+                "price": -320
+              }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2025-08-19T07:06:24Z",
+            "outcomes": [
+              {
+                "name": "Dallas Cowboys",
+                "price": -102,
+                "point": 6.5
+              },
+              {
+                "name": "Philadelphia Eagles",
+                "price": -120,
+                "point": -6.5
+              }
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2025-08-19T07:06:24Z",
+            "outcomes": [
+              {
+                "name": "Over",
+                "price": -105,
+                "point": 46.5
+              },
+              {
+                "name": "Under",
+                "price": -115,
+                "point": 46.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "9535d3e3ee9d9fc83ea2b500ad0b587c",
+    "sport_key": "americanfootball_nfl",
+    "sport_title": "NFL",
+    "commence_time": "2025-09-06T00:00:00Z",
+    "home_team": "Los Angeles Chargers",
+    "away_team": "Kansas City Chiefs",
+    "bookmakers": [
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2025-08-19T07:06:24Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2025-08-19T07:06:24Z",
+            "outcomes": [
+              {
+                "name": "Kansas City Chiefs",
+                "price": -172
+              },
+              {
+                "name": "Los Angeles Chargers",
+                "price": 144
+              }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2025-08-19T07:06:24Z",
+            "outcomes": [
+              {
+                "name": "Kansas City Chiefs",
+                "price": -120,
+                "point": -3.0
+              },
+              {
+                "name": "Los Angeles Chargers",
+                "price": -102,
+                "point": 3.0
+              }
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2025-08-19T07:06:24Z",
+            "outcomes": [
+              {
+                "name": "Over",
+                "price": -105,
+                "point": 45.5
+              },
+              {
+                "name": "Under",
+                "price": -115,
+                "point": 45.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2025-08-19T07:07:34Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Kansas City Chiefs",
+                "price": -180
+              },
+              {
+                "name": "Los Angeles Chargers",
+                "price": 150
+              }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Kansas City Chiefs",
+                "price": -118,
+                "point": -3.0
+              },
+              {
+                "name": "Los Angeles Chargers",
+                "price": -102,
+                "point": 3.0
+              }
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Over",
+                "price": -105,
+                "point": 45.5
+              },
+              {
+                "name": "Under",
+                "price": -115,
+                "point": 45.5
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2025-08-19T07:07:34Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Kansas City Chiefs",
+                "price": -175
+              },
+              {
+                "name": "Los Angeles Chargers",
+                "price": 145
+              }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Kansas City Chiefs",
+                "price": -120,
+                "point": -3.0
+              },
+              {
+                "name": "Los Angeles Chargers",
+                "price": 100,
+                "point": 3.0
+              }
+            ]
+          },
+          {
+            "key": "totals",
+            "last_update": "2025-08-19T07:07:34Z",
+            "outcomes": [
+              {
+                "name": "Over",
+                "price": -110,
+                "point": 45.5
+              },
+              {
+                "name": "Under",
+                "price": -110,
+                "point": 45.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

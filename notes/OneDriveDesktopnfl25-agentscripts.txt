@@ -1,0 +1,2 @@
+cd OneDrive\Desktop\nfl25-agent\scripts\
+venv\Scripts\activate

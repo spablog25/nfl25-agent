@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Broken Glass — Survivor Likes Matrix</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <style>
+    :root{ --bg:#0b0f14; --card:#121821; --grid:#1b2430; --text:#e9eef7; --muted:#94a3b8; --green:#179c52; --border:#223047; --row:#0f1520; --sticky:#0f1520; --gold:#d4af37; }
+    html,body{background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;overflow-x:hidden}
+    .wrap{max-width:1520px;margin:22px auto;padding:0 12px}
+    h1{margin:0 0 10px;font-size:20px}
+    .legend{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:6px 0 14px}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:5px 9px;background:var(--card);border:1px solid var(--border);color:var(--muted);font-size:11px}
+    .swatch{width:12px;height:12px;border-radius:3px;border:1px solid var(--border)}
+    .swatch.green{background:var(--green);border-color:#0c6c37}
+    .swatch.gray{background:#2a3445;border-color:#3a485f}
+    .swatch.gold{background:transparent;border:2px solid var(--gold)}
+
+    table{border-collapse:separate;border-spacing:0;width:100%;background:var(--grid);border:1px solid var(--border);border-radius:12px;table-layout:fixed}
+    thead th{position:sticky;top:0;background:var(--sticky);z-index:3}
+    th,td{padding:4px 4px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);text-align:center;font-size:11px}
+    th:first-child, td:first-child{position:sticky;left:0;background:var(--sticky);z-index:2;text-align:left;width:74px}
+    th:not(:first-child), td:not(:first-child){width:72px}
+    tbody tr:nth-child(even) td:first-child{background:var(--row)}
+
+    .cell{display:flex;align-items:center;justify-content:center;border-radius:8px;border:1px solid transparent;height:24px;width:64px;margin:0 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .liked{background:var(--green);color:#fff;border-color:#0c6c37;box-shadow:0 0 0 1px #0c6c37 inset}
+    .notliked{color:var(--muted)}
+
+    /* Holiday header columns still highlighted */
+    th.holiday-col{box-shadow: inset 0 0 0 2px var(--gold); color:var(--gold)}
+    /* Per-cell TG/CH (only cells with an actual TG/CH matchup get the highlight) */
+    td.holiday-col{box-shadow: inset 0 0 0 2px var(--gold)}
+
+    /* Gold rim = warning badge on earlier liked cells (but NEVER on TG/CH cells themselves) */
+    .gold-rim{box-shadow:0 0 0 2px var(--gold), 0 0 0 1px #0c6c37 inset;border-radius:8px}
+
+    .spinner{display:none;align-items:center;gap:8px;color:var(--muted)}
+    .spinner.show{display:flex}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:b 1s infinite alternate}
+    .dot:nth-child(2){animation-delay:.15s}.dot:nth-child(3){animation-delay:.3s}
+    @keyframes b{to{opacity:.2;transform:translateY(-2px)}}
+    .err{color:#ffb4b4;background:#3a0f16;border:1px solid #841b2d;padding:9px;border-radius:8px;margin-top:10px}
+    .notes{margin-top:8px;color:var(--muted);font-size:11px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Broken Glass — Survivor Likes Matrix</h1>
+    <div class="legend">
+      <span class="pill"><span class="swatch green"></span> Like → <b>OPP (H/A)</b></span>
+      <span class="pill"><span class="swatch gray"></span> Not a Like → <b>vs/@ OPP</b></span>
+      <span class="pill"><span class="swatch gold"></span> Gold rim on <b>liked</b> cells that occur <i>before</i> that team's TG/CH game (not on the TG/CH cells themselves). TG/CH column highlight shows only when that team actually has a holiday game.</span>
+    </div>
+
+    <div id="loader" class="spinner"><span class="dot"></span><span class="dot"></span><span class="dot"></span>Building matrix…</div>
+    <div id="error" class="err" style="display:none"></div>
+
+    <table id="grid"><thead></thead><tbody></tbody></table>
+    <div class="notes">Sources: <code id="likesPath"></code> · <code id="schedPath"></code></div>
+  </div>
+
+  <script>
+    // Auto-path from root or /public
+    const BASE = location.pathname.toLowerCase().includes('/public/') ? '..' : '.';
+    const LIKES_CSV = `${BASE}/data/survivor_bg_likes_YN.csv`;
+    const SCHED_CSV = `${BASE}/data/2025_nfl_schedule_cleaned.csv`;
+
+    const WEEKS = ['W1','W2','W3','W4','W5','W6','W7','W8','W9','W10','W11','W12','TG','W13','W14','W15','W16','CH'];
+    const ORDER = Object.fromEntries(Array.from({length:16},(_,i)=>['W'+(i+1), i+1]).concat([["TG",12.5],["CH",16.5]]));
+    const WEEK_TO_NUM = Object.fromEntries(Array.from({length:16},(_,i)=>['W'+(i+1), i+1]));
+    const TEAMS_32 = ['ARI','ATL','BAL','BUF','CAR','CHI','CIN','CLE','DAL','DEN','DET','GB','HOU','IND','JAX','KC','LAC','LAR','LV','MIA','MIN','NE','NO','NYG','NYJ','PHI','PIT','SEA','SF','TB','TEN','WSH'];
+
+    document.getElementById('likesPath').textContent = LIKES_CSV;
+    document.getElementById('schedPath').textContent = SCHED_CSV;
+
+    const q=s=>document.querySelector(s); const thead=q('#grid thead'); const tbody=q('#grid tbody');
+    const showErr=msg=>{const e=q('#error'); e.style.display='block'; e.textContent=msg;};
+    const showLoader=on=>q('#loader').classList.toggle('show', !!on);
+
+    function loadCSV(url){
+      return new Promise((resolve,reject)=>{
+        Papa.parse(url,{header:true,download:true,skipEmptyLines:true,complete:res=>{
+          if(!res||!Array.isArray(res.data)) return reject(new Error('No rows'));
+          resolve(res.data.map(r=>Object.fromEntries(Object.entries(r).map(([k,v])=>[String(k).trim(), String(v??'').trim()] ))));
+        }, error:err=>reject(new Error(`Failed to parse ${url}: ${err}`))});
+      });
+    }
+
+    function parseAnyDate(s){ if(!s) return null; const m=String(s).match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/); if(m) return new Date(+m[3], +m[1]-1, +m[2]); const d=new Date(s); return isNaN(d)?null:d; }
+    function thanksgivingDate(year){ const d=new Date(year,10,1); const firstThu=1+((4-d.getDay()+7)%7); return new Date(year,10, firstThu+21); }
+
+    function buildMaps(rows){
+      const schedMap={}; const holOpp={TG:{}, CH:{}}; const teamsWithTG=new Set(); const teamsWithCH=new Set();
+      for(const r of rows){
+        const wkMatch=String(r.week||'').match(/\d+/); if(!wkMatch) continue; const wk=parseInt(wkMatch[0],10);
+        const v=String(r.vistm||'').toUpperCase(); const h=String(r.hometm||'').toUpperCase(); if(!v||!h) continue;
+        (schedMap[v]||(schedMap[v]={}))[wk]={opp:h,hoa:'A'}; (schedMap[h]||(schedMap[h]={}))[wk]={opp:v,hoa:'H'};
+        const dt=parseAnyDate(r.date); if(!dt) continue; const y=dt.getFullYear(); const tg=thanksgivingDate(y);
+        const isTG = dt.getMonth()===tg.getMonth() && dt.getDate()===tg.getDate();
+        const isBF = dt.getMonth()===tg.getMonth() && dt.getDate()===(tg.getDate()+1);
+        const isCH = dt.getMonth()===11 && dt.getDate()===25;
+        if(isTG||isBF){ holOpp.TG[v]={opp:h,hoa:'A'}; holOpp.TG[h]={opp:v,hoa:'H'}; teamsWithTG.add(v); teamsWithTG.add(h); }
+        if(isCH){ holOpp.CH[v]={opp:h,hoa:'A'}; holOpp.CH[h]={opp:v,hoa:'H'}; teamsWithCH.add(v); teamsWithCH.add(h); }
+      }
+      return {schedMap, holOpp, teamsWithTG, teamsWithCH};
+    }
+
+    function renderHeader(){
+      const tr=document.createElement('tr'); const th0=document.createElement('th'); th0.textContent='Team'; tr.appendChild(th0);
+      for(const w of WEEKS){ const th=document.createElement('th'); th.textContent=w; if(w==='TG'||w==='CH') th.classList.add('holiday-col'); tr.appendChild(th); }
+      thead.innerHTML=''; thead.appendChild(tr);
+    }
+
+    function buildCell(team, weekLabel, likesYN, maps){
+      const {schedMap, holOpp, teamsWithTG, teamsWithCH}=maps;
+      const td=document.createElement('td');
+      let info=null; if(weekLabel==='TG') info=holOpp.TG[team]||null; else if(weekLabel==='CH') info=holOpp.CH[team]||null; else { const wk=WEEK_TO_NUM[weekLabel]; info=(schedMap[team]||{})[wk]||null; }
+      // Only apply per-cell TG/CH highlight if this team actually has a holiday game
+      if((weekLabel==='TG'||weekLabel==='CH') && info){ td.classList.add('holiday-col'); }
+      const span=document.createElement('span'); span.className='cell';
+      if(!info){ span.textContent='-'; span.classList.add('notliked'); td.appendChild(span); return td; }
+      const isLike=String(likesYN||'').toUpperCase()==='Y';
+      if(isLike){ span.textContent=`${info.opp} (${info.hoa})`; span.classList.add('liked');
+        // gold rim warning on earlier liked cells (never on TG/CH cells themselves)
+        const idx = ORDER[weekLabel]; const isHoliday=(weekLabel==='TG'||weekLabel==='CH');
+        const priorToTG = teamsWithTG.has(team) && (idx < ORDER['TG']);
+        const priorToCH = teamsWithCH.has(team) && (idx < ORDER['CH']);
+        if((priorToTG||priorToCH) && !isHoliday){ span.classList.add('gold-rim'); }
+      } else { const prefix=info.hoa==='H'?'vs':'@'; span.textContent=`${prefix} ${info.opp}`; span.classList.add('notliked'); }
+      td.appendChild(span); return td;
+    }
+
+    async function init(){
+      try{
+        showLoader(true);
+        const [likes, sched] = await Promise.all([loadCSV(LIKES_CSV), loadCSV(SCHED_CSV)]);
+        const maps = buildMaps(sched);
+        const likesByTeam={}; for(const t of TEAMS_32){ likesByTeam[t]={team:t}; for(const w of WEEKS){ likesByTeam[t][w]='N'; } }
+        for(const r of likes){ const t=(r.team||r.Team||'').toUpperCase(); if(!t) continue; for(const w of WEEKS){ if(r[w]!==undefined && r[w]!==null && r[w]!=='' ) likesByTeam[t][w]=String(r[w]).toUpperCase(); } }
+        renderHeader(); tbody.innerHTML='';
+        for(const team of TEAMS_32){ const tr=document.createElement('tr'); const td0=document.createElement('td'); td0.textContent=team; td0.style.fontWeight='600'; tr.appendChild(td0); const row=likesByTeam[team]||{}; for(const w of WEEKS){ tr.appendChild(buildCell(team,w,row[w],maps)); } tbody.appendChild(tr); }
+      }catch(err){ console.error(err); showErr(String(err.message||err)); }
+      finally{ showLoader(false); }
+    }
+
+    init();
+  </script>
+</body>
+</html>

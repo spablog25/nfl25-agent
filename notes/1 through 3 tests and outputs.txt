@@ -1,0 +1,323 @@
+1) C:\Users\Spencer\OneDrive\Desktop\nfl25-agent
+1b)
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> # List key folders
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Write-Host "`n=== Top-level folders ==="
+
+=== Top-level folders ===
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Get-ChildItem -Directory | Select-Object Name
+
+Name                              
+----
+.idea
+data
+nfl25.egg-info
+notes
+picks
+pro-football-reference-web-scraper
+reports
+scripts
+venv
+
+
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent>
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Write-Host "`n=== scripts/ ==="
+
+=== scripts/ ===
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Get-ChildItem -Path .\scripts | Select-Object Name
+
+Name                                
+----
+.idea
+backtests
+scrape_pfr
+venv
+__pycache__
+analyze_dvoa_rating_gap.py
+analyze_millions.py
+analyze_rest_days.py
+analyze_rest_diff.py
+backtest_future_thresholds.py
+baseline_runner.py
+build_roadmap.py
+calculate_rest_edge.py
+cleanup_old_dvoa_columns.py
+clean_schedule.py
+clean_schedule_teams.py
+compute_dvoa_trends.py
+config.py
+debug_schedule_page.png
+dvoa_columns.py
+expand_and_flag_schedule.py
+fetch_dvoa_and_update_spot_values.py
+fetch_nfl_moneylines.py
+fetch_nfl_odds.py
+fetch_NFL_schedule.py
+generate_survivor_matrix.py
+generate_survivor_roadmap.py
+generate_td_digits.py
+import.py                           
+ingest_ftn_dvoa_snapshot.py
+inspect_columns.py
+inspect_win_prob_column.py
+load_data.py
+load_sr.py
+log_survivor_pick.py
+millions_audit_week.py
+millions_build_game_view.py
+normalize_td_weekly.py
+paths.py
+print_sch.py
+rank_td_digits.py
+raw_schedule.html
+refactor_survivor_paths.py
+score_td_exacta_trifecta.py
+seed_spot_values.py
+spot_value_bucket_counts.py
+spot_value_regression_analysis.py
+spot_value_score.py
+spot_value_updates.py
+survivor_planner.py
+survivor_quick_report.py
+survivor_stage1_check.py
+sync_and_validate.py
+sync_roadmap_with_schedule.py
+teams.py
+test_paths.py
+test_selenium.py
+test_wk1_6.py
+track_picks.py
+update_spot_values.py
+utils_dvoa.py
+utils_guardrails.py
+utils_io.py
+utils_read.py
+utils_schema.py
+validate_core_data.py
+validate_roadmap_columns.py
+validate_survivor_state.py
+win_probability_analysis.py
+xlsx_to_staging_csv.py
+__init__.py
+
+
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent>
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Write-Host "`n=== picks/millions/ ==="
+
+=== picks/millions/ ===
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Get-ChildItem -Path .\picks\millions | Select-Object Name
+
+Name                     
+----
+diagnostics
+millions_history.csv
+millions_planner.cs
+millions_planner.csv
+millions_planner.csv.txt
+millions_roadmap_game.csv
+millions_weekly_games.csv
+
+
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent>
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Write-Host "`n=== data/ ==="
+
+=== data/ ===
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Get-ChildItem -Path .\data | Select-Object Name
+
+Name                         
+----
+dvoa
+ftn
+td_digits
+_snapshots
+2025_dvoa_projections.csv
+2025_nfl_schedule.csv
+2025_nfl_schedule_cleaned.csv
+dvoa_data.csv
+
+1c)
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Write-Host "`n=== Expected key files ==="
+
+=== Expected key files ===
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> # Week 1 weekly games
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Test-Path .\picks\millions\millions_weekly_games.csv | ForEach-Object { "millions_weekly_games.csv: $($_)" }
+millions_weekly_games.csv: True
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent>
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> # Full-season roadmap
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Test-Path .\picks\millions\millions_roadmap_game.csv | ForEach-Object { "millions_roadmap_game.csv: $($_)" }
+millions_roadmap_game.csv: True
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent>
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> # Latest audit (if generated)
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Test-Path .\picks\millions\diagnostics\millions_week_audit.md | ForEach-Object { "millions_week_audit.md: $($_)" }
+millions_week_audit.md: True
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent>
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> # DVOA projections
+(venv) PS C:\Users\Spencer\OneDrive\Desktop\nfl25-agent> Test-Path .\data\2025_dvoa_projections.csv | ForEach-Object { "2025_dvoa_projections.csv: $($_)" }
+2025_dvoa_projections.csv: True
+
+2)quick_verify_millions
+
+=== Millions Week 1 (weekly) ===
+Rows: 16 | Cols: 41
+Columns: ['week', 'game_num', 'matchup', 'kickoff_local', 'venue', 'home_team', 'away_team', 'open_spread_home', 'open_spread_away', 'circa_spread_home', 'circa_spread_away', 'current_
+spread_home', 'current_spread_away', 'closing_spread_home', 'closing_spread_away', 'line_value_current_home', 'line_value_current_away', 'line_value_closing_home', 'line_value_closing_
+away', 'line_value_home', 'line_value_away', 'off_epa_per_play_home', 'off_epa_per_play_away', 'def_epa_per_play_home', 'def_epa_per_play_away', 'total_dvoa_home', 'total_dvoa_away', '
+off_dvoa_home', 'off_dvoa_away', 'def_dvoa_home', 'def_dvoa_away', 'st_dvoa_home', 'st_dvoa_away', 'rest_days_home', 'rest_days_away', 'rest_days_diff', 'injuries_key_home', 'injuries_key_away', 'weather_notes', 'circa_spread_price_home', 'circa_spread_price_away']
+   week  game_num    matchup kickoff_local  venue home_team  ... rest_days_diff  injuries_key_home  injuries_key_away  weather_notes  circa_spread_price_home  circa_spread_price_away
+0     1         1   ARI @ NO       1:00 PM    NaN        NO  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+1     1         2  CAR @ JAX       1:00 PM    NaN       JAX  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+2     1         3  CIN @ CLE       1:00 PM    NaN       CLE  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+3     1         4    LV @ NE       1:00 PM    NaN        NE  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+4     1         5  MIA @ IND       1:00 PM    NaN       IND  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+
+[5 rows x 41 columns]
+
+Top 10 missingness (%):
+line_value_away            100.0
+line_value_current_home    100.0
+circa_spread_price_home    100.0
+weather_notes              100.0
+injuries_key_away          100.0
+injuries_key_home          100.0
+def_epa_per_play_away      100.0
+def_epa_per_play_home      100.0
+off_epa_per_play_away      100.0
+off_epa_per_play_home      100.0
+dtype: float64
+
+=== Millions Roadmap (season) ===
+Rows: 272 | Cols: 41
+Columns: ['week', 'game_num', 'matchup', 'kickoff_local', 'venue', 'home_team', 'away_team', 'open_spread_home', 'open_spread_away', 'circa_spread_home', 'circa_spread_away', 'current_
+spread_home', 'current_spread_away', 'closing_spread_home', 'closing_spread_away', 'line_value_current_home', 'line_value_current_away', 'line_value_closing_home', 'line_value_closing_
+away', 'line_value_home', 'line_value_away', 'off_epa_per_play_home', 'off_epa_per_play_away', 'def_epa_per_play_home', 'def_epa_per_play_away', 'total_dvoa_home', 'total_dvoa_away', '
+off_dvoa_home', 'off_dvoa_away', 'def_dvoa_home', 'def_dvoa_away', 'st_dvoa_home', 'st_dvoa_away', 'rest_days_home', 'rest_days_away', 'rest_days_diff', 'injuries_key_home', 'injuries_key_away', 'weather_notes', 'circa_spread_price_home', 'circa_spread_price_away']
+   week  game_num    matchup kickoff_local  venue home_team  ... rest_days_diff  injuries_key_home  injuries_key_away  weather_notes  circa_spread_price_home  circa_spread_price_away
+0     1         1   ARI @ NO       1:00 PM    NaN        NO  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+1     1         2  CAR @ JAX       1:00 PM    NaN       JAX  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+2     1         3  CIN @ CLE       1:00 PM    NaN       CLE  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+3     1         4    LV @ NE       1:00 PM    NaN        NE  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+4     1         5  MIA @ IND       1:00 PM    NaN       IND  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+
+[5 rows x 41 columns]
+
+Top 10 missingness (%):
+line_value_away            100.0
+line_value_current_home    100.0
+circa_spread_price_home    100.0
+weather_notes              100.0
+injuries_key_away          100.0
+injuries_key_home          100.0
+def_epa_per_play_away      100.0
+def_epa_per_play_home      100.0
+off_epa_per_play_away      100.0
+off_epa_per_play_home      100.0
+dtype: float64
+
+=== DVOA Projections ===
+Rows: 32 | Cols: 15
+Columns: ['Team', 'Avg Wins', 'Make Playoffs', 'Reach Super Bowl', 'Win Super Bowl', 'Total DVOA', 'Total DVOA Rk', 'Off DVOA', 'Off DVOA Rk', 'Def DVOA', 'Def DVOA Rk', 'ST DVOA', 'ST DVOA Rk', 'Average Opponent', 'Average Opponent Rk']
+  Team  Avg Wins Make Playoffs Reach Super Bowl Win Super Bowl Total DVOA  Total DVOA Rk  ... Off DVOA Rk  Def DVOA Def DVOA Rk  ST DVOA ST DVOA Rk  Average Opponent Average Opponent Rk
+0  BUF      11.9        88.50%           26.10%         14.70%     19.30%              3  ...           2    -2.90%           8   -0.40%         23            -3.60%                  27
+1  BAL      11.8        89.00%           31.20%         19.10%     24.10%              1  ...           4     5.10%           4    1.10%          9            -1.70%                  19
+2   SF      11.2        79.70%           17.70%          8.60%     13.70%              6  ...           3    -0.30%           9   -1.90%         30             5.40%                  32
+3  DET      10.7        76.90%           22.20%         12.10%     20.40%              2  ...           1     1.40%           6   -0.30%         21            -0.50%                  16
+4   KC      10.6        74.60%           15.20%          8.10%     15.90%              4  ...          10    -2.90%           7    1.90%          1             2.50%                   
+6
+
+[5 rows x 15 columns]
+
+Top 10 missingness (%):
+Team                0.0
+Avg Wins            0.0
+Make Playoffs       0.0
+Reach Super Bowl    0.0
+Win Super Bowl      0.0
+Total DVOA          0.0
+Total DVOA Rk       0.0
+Off DVOA            0.0
+Off DVOA Rk         0.0
+Def DVOA            0.0
+dtype: float64
+
+
+
+=== Millions Week 1 (weekly) ===
+Rows: 16 | Cols: 41
+Columns: ['week', 'game_num', 'matchup', 'kickoff_local', 'venue', 'home_team', 'away_team', 'open_spread_home', 'open_spread_away', 'circa_spread_home', 'circa_spread_away', 'current_
+spread_home', 'current_spread_away', 'closing_spread_home', 'closing_spread_away', 'line_value_current_home', 'line_value_current_away', 'line_value_closing_home', 'line_value_closing_
+away', 'line_value_home', 'line_value_away', 'off_epa_per_play_home', 'off_epa_per_play_away', 'def_epa_per_play_home', 'def_epa_per_play_away', 'total_dvoa_home', 'total_dvoa_away', '
+off_dvoa_home', 'off_dvoa_away', 'def_dvoa_home', 'def_dvoa_away', 'st_dvoa_home', 'st_dvoa_away', 'rest_days_home', 'rest_days_away', 'rest_days_diff', 'injuries_key_home', 'injuries_key_away', 'weather_notes', 'circa_spread_price_home', 'circa_spread_price_away']
+   week  game_num    matchup kickoff_local  venue home_team  ... rest_days_diff  injuries_key_home  injuries_key_away  weather_notes  circa_spread_price_home  circa_spread_price_away
+0     1         1   ARI @ NO       1:00 PM    NaN        NO  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+1     1         2  CAR @ JAX       1:00 PM    NaN       JAX  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+2     1         3  CIN @ CLE       1:00 PM    NaN       CLE  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+3     1         4    LV @ NE       1:00 PM    NaN        NE  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+4     1         5  MIA @ IND       1:00 PM    NaN       IND  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+
+[5 rows x 41 columns]
+
+Top 10 missingness (%):
+line_value_away            100.0
+line_value_current_home    100.0
+circa_spread_price_home    100.0
+weather_notes              100.0
+injuries_key_away          100.0
+injuries_key_home          100.0
+def_epa_per_play_away      100.0
+def_epa_per_play_home      100.0
+off_epa_per_play_away      100.0
+off_epa_per_play_home      100.0
+dtype: float64
+
+=== Millions Roadmap (season) ===
+Rows: 272 | Cols: 41
+Columns: ['week', 'game_num', 'matchup', 'kickoff_local', 'venue', 'home_team', 'away_team', 'open_spread_home', 'open_spread_away', 'circa_spread_home', 'circa_spread_away', 'current_
+spread_home', 'current_spread_away', 'closing_spread_home', 'closing_spread_away', 'line_value_current_home', 'line_value_current_away', 'line_value_closing_home', 'line_value_closing_
+away', 'line_value_home', 'line_value_away', 'off_epa_per_play_home', 'off_epa_per_play_away', 'def_epa_per_play_home', 'def_epa_per_play_away', 'total_dvoa_home', 'total_dvoa_away', '
+off_dvoa_home', 'off_dvoa_away', 'def_dvoa_home', 'def_dvoa_away', 'st_dvoa_home', 'st_dvoa_away', 'rest_days_home', 'rest_days_away', 'rest_days_diff', 'injuries_key_home', 'injuries_key_away', 'weather_notes', 'circa_spread_price_home', 'circa_spread_price_away']
+   week  game_num    matchup kickoff_local  venue home_team  ... rest_days_diff  injuries_key_home  injuries_key_away  weather_notes  circa_spread_price_home  circa_spread_price_away
+0     1         1   ARI @ NO       1:00 PM    NaN        NO  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+1     1         2  CAR @ JAX       1:00 PM    NaN       JAX  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+2     1         3  CIN @ CLE       1:00 PM    NaN       CLE  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+3     1         4    LV @ NE       1:00 PM    NaN        NE  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+4     1         5  MIA @ IND       1:00 PM    NaN       IND  ...              0                NaN                NaN            NaN                      NaN                      NaN  
+
+[5 rows x 41 columns]
+
+Top 10 missingness (%):
+line_value_away            100.0
+line_value_current_home    100.0
+circa_spread_price_home    100.0
+weather_notes              100.0
+injuries_key_away          100.0
+injuries_key_home          100.0
+def_epa_per_play_away      100.0
+def_epa_per_play_home      100.0
+off_epa_per_play_away      100.0
+off_epa_per_play_home      100.0
+dtype: float64
+
+=== DVOA Projections ===
+Rows: 32 | Cols: 15
+Columns: ['Team', 'Avg Wins', 'Make Playoffs', 'Reach Super Bowl', 'Win Super Bowl', 'Total DVOA', 'Total DVOA Rk', 'Off DVOA', 'Off DVOA Rk', 'Def DVOA', 'Def DVOA Rk', 'ST DVOA', 'ST DVOA Rk', 'Average Opponent', 'Average Opponent Rk']
+  Team  Avg Wins Make Playoffs Reach Super Bowl Win Super Bowl Total DVOA  Total DVOA Rk  ... Off DVOA Rk  Def DVOA Def DVOA Rk  ST DVOA ST DVOA Rk  Average Opponent Average Opponent Rk
+0  BUF      11.9        88.50%           26.10%         14.70%     19.30%              3  ...           2    -2.90%           8   -0.40%         23            -3.60%                  27
+1  BAL      11.8        89.00%           31.20%         19.10%     24.10%              1  ...           4     5.10%           4    1.10%          9            -1.70%                  19
+2   SF      11.2        79.70%           17.70%          8.60%     13.70%              6  ...           3    -0.30%           9   -1.90%         30             5.40%                  32
+3  DET      10.7        76.90%           22.20%         12.10%     20.40%              2  ...           1     1.40%           6   -0.30%         21            -0.50%                  16
+4   KC      10.6        74.60%           15.20%          8.10%     15.90%              4  ...          10    -2.90%           7    1.90%          1             2.50%                   
+6
+
+[5 rows x 15 columns]
+
+Top 10 missingness (%):
+Team                0.0
+Avg Wins            0.0
+Make Playoffs       0.0
+Reach Super Bowl    0.0
+Win Super Bowl      0.0
+Total DVOA          0.0
+Total DVOA Rk       0.0
+Off DVOA            0.0
+Off DVOA Rk         0.0
+Def DVOA            0.0
+dtype: float64

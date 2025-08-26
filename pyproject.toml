@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nfl25"
+version = "0.1.0"
+description = "NFL25 Agent - Survivor & Millions Contest Tool"
+readme = "README.md"
+requires-python = ">=3.11"
+
+# Optional: Add author info if you want
+authors = [
+    { name = "Your Name", email = "you@example.com" }
+]
+
+[tool.setuptools.packages.find]
+# Include your 'scripts' folder as a package
+include = ["scripts"]
